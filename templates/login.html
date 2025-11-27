@@ -1,16 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <h2>Login</h2>
-<form method="POST">
+<form method="POST" action="/login">
   {{ form.hidden_tag() }}
-  <div>
-    {{ form.username.label }}<br />
-    {{ form.username(size=32) }}
-  </div>
-  <div>
-    {{ form.password.label }}<br />
-    {{ form.password(size=32) }}
-  </div>
-  <div>{{ form.submit() }}</div>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" size="32" required />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" size="32" required />
+    <button type="submit">Login</button>
   {% if error %}
   <p style="color: red">{{ error }}</p>
   {% endif %}

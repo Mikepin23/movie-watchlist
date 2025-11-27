@@ -1,4 +1,4 @@
-from flask import jsonify, render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for
 from flask_login import login_user, logout_user
 from models.user import User
 from extensions import db, bcrypt
