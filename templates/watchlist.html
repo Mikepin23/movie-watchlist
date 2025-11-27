@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}My Watchlist - Movie Watchlist{%
+endblock %} {% block content %}
+<section id="list_movies">
+  <h1>Unwatched Movies</h1>
+  {% if unwatched_movies %}
+  <ul>
+    {% for movie in unwatched_movies %}
+    <li>
+      {{ movie.title }}
+      <br />
+      <small
+        >Added: {{ movie.date_added.strftime('%Y-%m-%d %H:%M:%S') if
+        movie.date_added else 'N/A' }}</small
+      >
+      <form
+        action="{{ url_for('movie.delete_movie', movie_id=movie.id) }}"
+        method="POST">
+        {{ form.hidden_tag() }}
+        <button type="submit" onclick="return confirm('Delete this movie?');">
+          Remove
+        </button>
+      </form>
+      <form
+        action="{{ url_for('movie.toggle_watched', movie_id=movie.id) }}"
+        method="POST"
+        style="display: inline">
+        {{ form.hidden_tag() }}
+        <button type="submit">Mark as Watched</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No unwatched movies.</p>
+  {% endif %}
+
+  <h1>Watched Movies</h1>
+  {% if watched_movies %}
+  <ul>
+    {% for movie in watched_movies %}
+    <li>
+      {{ movie.title }}
+      <br />
+      <small
+        >Watched On: {{ movie.date_watched.strftime('%Y-%m-%d %H:%M:%S') if
+        movie.date_watched else 'N/A' }}</small
+      >
+      <form
+        action="{{ url_for('movie.delete_movie', movie_id=movie.id) }}"
+        method="POST">
+        {{ form.hidden_tag() }}
+        <button type="submit" onclick="return confirm('Delete this movie?');">
+          Remove
+        </button>
+      </form>
+      <form
+        action="{{ url_for('movie.toggle_watched', movie_id=movie.id) }}"
+        method="POST"
+        style="display: inline">
+        {{ form.hidden_tag() }}
+        <button type="submit">Mark as Unwatched</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No watched movies.</p>
+  {% endif %}
+</section>
+<section id="add_movie">
+  <form action="{{ url_for('movie.add_movie') }}" method="POST">
+    {{ form.hidden_tag() }}
+    <label for="title">Movie Title</label>
+    <input type="text" id="title" name="title" size="32" required />
+    <button type="submit">Add</button>
+  </form>
+</section>
+{% endblock %}
