@@ -6,6 +6,10 @@ from flask_login import LoginManager
 from controllers.auth_controller import handle_register, handle_login
 from dotenv import load_dotenv
 from flask_migrate import Migrate
+from models.user import User
+from models.movie import Movie
+from routes.auth_routes import auth_bp
+from routes.movie_routes import movie_bp
 
 # Allow .env variables to be loaded
 load_dotenv()
@@ -28,11 +32,6 @@ login_manager.login_view = 'auth.login'
 # Initialize CSRF protection
 csrf = CSRFProtect(app)
 
-
-# Import models to register them with SQLAlchemy
-from models.user import User
-from models.movie import Movie
-
 # User loader for Flask-Login
 @login_manager.user_loader
 def load_user(user_id):
@@ -45,9 +44,7 @@ migrate = Migrate(app, db)
 bcrypt.init_app(app)
 
 # Register Blueprints
-from routes.auth_routes import auth_bp
 app.register_blueprint(auth_bp)
-from routes.movie_routes import movie_bp
 app.register_blueprint(movie_bp)
 
 # Run the app

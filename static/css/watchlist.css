@@ -1,0 +1,34 @@
+.li-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.li-container li {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.btn-inline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.remove:hover {
+  background-color: red;
+}

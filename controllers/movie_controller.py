@@ -3,6 +3,7 @@ from flask_login import current_user
 from forms.movie_forms import AddMovieForm
 from models.movie import Movie
 from extensions import db
+import datetime
 
 def require_login(message):
     if not current_user.is_authenticated:
@@ -29,7 +30,7 @@ def handle_add_movie():
     form = AddMovieForm()
     if form.validate_on_submit():
         title = form.title.data
-        new_movie = Movie(title=title, user_id=current_user.id)
+        new_movie = Movie(title=title, user_id=current_user.id, date_added=datetime.datetime.now())
         db.session.add(new_movie)
         db.session.commit()
         flash(f'Movie "{title}" added to your watchlist!', 'success')

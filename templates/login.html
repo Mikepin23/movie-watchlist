@@ -1,14 +1,24 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Login</h2>
-<form method="POST" action="/login">
-  {{ form.hidden_tag() }}
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" size="32" required />
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" size="32" required />
-    <button type="submit">Login</button>
-  {% if error %}
-  <p style="color: red">{{ error }}</p>
-  {% endif %}
-</form>
+<div class="auth-container">
+  <div class="form-container">
+    <h1>Login</h1>
+    <form method="POST" action="/login">
+      {{ form.hidden_tag() }}
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        value="{{ form.username.data or '' }}"
+        size="32"
+        required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" size="32" required />
+      <button type="submit">Login</button>
+      {% if error %}
+      <p style="color: red">{{ error }}</p>
+      {% endif %}
+    </form>
+  </div>
+</div>
 {% endblock %}

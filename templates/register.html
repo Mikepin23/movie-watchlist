@@ -1,21 +1,30 @@
 {% extends "base.html" %} {% block title %}Sign Up - Movie Watchlist{% endblock
 %} {% block content %}
-<h1>Sign Up</h1>
-<form method="POST" action="/register">
-  {{ form.hidden_tag() }}
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username" required />
-  {% for error in form.username.errors %}
-  <span class="error" style="color: red">{{ error }}</span>
-  {% endfor %}
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" required />
-  {% for error in form.password.errors %}
-  <span class="error" style="color: red">{{ error }}</span>
-  {% endfor %}
-  <button type="submit">Sign Up</button>
-  {% if error %}
-  <span class="error" style="color: red">{{ error }}</span>
-  {% endif %}
-</form>
+<div class="auth-container">
+  <div class="form-container">
+    <h1>Sign Up</h1>
+    <form method="POST" action="/register">
+      {{ form.hidden_tag() }}
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        value="{{ form.username.data or '' }}"
+        required />
+      {% for error in form.username.errors %}
+      <span class="error" style="color: red">{{ error }}</span>
+      {% endfor %}
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
+      {% for error in form.password.errors %}
+      <span class="error" style="color: red">{{ error }}</span>
+      {% endfor %}
+      <button type="submit">Sign Up</button>
+      {% if error %}
+      <span class="error" style="color: red">{{ error }}</span>
+      {% endif %}
+    </form>
+  </div>
+</div>
 {% endblock %}

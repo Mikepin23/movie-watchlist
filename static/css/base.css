@@ -1,0 +1,152 @@
+/* Container */
+:root {
+  --primary-color: rgb(245, 228, 203);
+  --secondary-color: #fb8840;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 5rem auto;
+  width: 100%;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+}
+
+a {
+  color: #333;
+  margin: 0 1rem;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  position: relative;
+  background-color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+a:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a:visited {
+  color: #333;
+}
+
+/* Base CSS */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.home-container {
+  margin: 5rem auto;
+  padding: 1rem;
+  background: linear-gradient(to bottom right, #fcbd95, #ffe4d6);
+  width: 70%;
+  border: 0.1rem solid gray;
+  border-radius: 0.2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Image */
+#hero-image {
+  display: block;
+  margin: 2rem auto;
+  max-width: 50%;
+  max-height: 40rem;
+  border-radius: 0.25rem;
+  border: 0.2rem solid gray;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.auth-container {
+  margin-top: 5rem;
+}
+
+.form-container {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
