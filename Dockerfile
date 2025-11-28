@@ -13,5 +13,5 @@ COPY . .
 
 # Set environment variable for port
 
-# Create tables, then start the app with Gunicorn on port 8080
-CMD python create_tables.py && gunicorn app:app --bind 0.0.0.0:8080
+# Run migrations, then start the app with Gunicorn on port 8080
+CMD flask db upgrade && gunicorn app:app --bind 0.0.0.0:8080
