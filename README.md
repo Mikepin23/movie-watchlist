@@ -1,6 +1,6 @@
 # 🎬 Movie Watchlist
 
-> **A simple web-based movie watchlist app built with Python, Flask, and Bootstrap.**
+> **A simple web-based movie watchlist app built with Python and Flask**
 
 ---
 
