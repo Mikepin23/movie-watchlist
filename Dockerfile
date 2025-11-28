@@ -12,7 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set environment variable for port
-ENV PORT=5000
 
-# Start the app with Gunicorn
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:$PORT"]
+# Start the app with Gunicorn on port 8080
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8080"]
