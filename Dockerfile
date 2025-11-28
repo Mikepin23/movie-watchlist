@@ -13,5 +13,5 @@ COPY . .
 
 # Set environment variable for port
 
-# Start the app with Gunicorn on port 8080
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8080"]
+# Create tables, then start the app with Gunicorn on port 8080
+CMD python create_tables.py && gunicorn app:app --bind 0.0.0.0:8080
