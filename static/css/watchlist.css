@@ -37,6 +37,10 @@ li {
   background-color: red;
 }
 
+#list_movies h2 {
+  color: #fb8840;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .li-container {
