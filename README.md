@@ -13,10 +13,9 @@
 <p align="center">
 	<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 	<img src="https://img.shields.io/badge/Flask-2.3.0-000000?style=for-the-badge&logo=flask&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Bootstrap-5.3.0-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Responsive-Yes-28a745?style=for-the-badge"/>
 	<img src="https://img.shields.io/badge/SQLAlchemy-2.0-CCA776?style=for-the-badge&logo=sqlalchemy&logoColor=white"/>
 	<img src="https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Render-Deploy-46A2F1?style=for-the-badge"/>
 </p>
 
 ---
