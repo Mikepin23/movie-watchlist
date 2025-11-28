@@ -1,3 +1,7 @@
+#add_movie {
+  margin-bottom: 4rem;
+}
+
 .li-container {
   display: flex;
   justify-content: space-between;
@@ -32,3 +36,24 @@ li {
 .remove:hover {
   background-color: red;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .li-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .btn-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+    .btn-inline button {
+      width: 8rem;
+      min-height: 2rem;
+    }
+  }

@@ -20,7 +20,7 @@ endblock %} {% block content %}
         <div class="movie-info">
           <h2>{{ movie.title }}</h2>
           <small
-            >Added: {{ movie.date_added.strftime('%Y-%m-%d %H:%M') if
+            ><strong>Added:</strong> {{ movie.date_added.strftime('%Y-%m-%d %H:%M') if
             movie.date_added else 'N/A' }}</small
           >
         </div>
@@ -61,7 +61,7 @@ endblock %} {% block content %}
         <div class="movie-info">
           <h2>{{ movie.title }}</h2>
           <small
-            >Watched On: {{ movie.date_watched.strftime('%Y-%m-%d %H:%M') if
+            ><strong>Watched On:</strong> {{ movie.date_watched.strftime('%Y-%m-%d %H:%M') if
             movie.date_watched else 'N/A' }}</small
           >
         </div>
